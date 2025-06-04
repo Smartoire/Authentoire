@@ -7,7 +7,7 @@
         "storage"
     ],
     "action": {
-        "default_popup": "Authentoire.html",
-        "default_icon": "A-Authentoire.png"
+        "default_popup": "src/Authentoire.html",
+        "default_icon": "src/A-Authentoire.png"
     }
 }
