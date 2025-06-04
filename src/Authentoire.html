@@ -2,29 +2,41 @@
 <html>
 
 <head>
-    <title>TOTP Authenticator</title>
-    <link rel="stylesheet" href="Authentoire.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentoire</title>
+    <link rel="stylesheet" href="./css/Authentoire.css" />
 </head>
 
 <body>
-    <main>
-        <img src="authentoire.png" alt="Authentoire Logo" class="dialog-logo">
-        <div id="code-list"></div>
+    <div id="header">
+        <img src="./icons/authentoire.png" alt="Authentoire Logo" id="logo">
+        <div id="timer-bar">
+            <div id="timer-progress"></div>
+        </div>
+        <!-- Add Button -->
+        <button id="add-btn">
+          <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+          </svg>
+        </button>
+    </div>
 
-        <button id="add-btn">Add New Account</button>
-    </main>
+    <div id="notification" class="hide">
+        <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        <span>Copied to clipboard!</span>
+    </div>
+
+    <div id="content">
+        <div id="code-list"></div>
+    </div>
 
     <dialog id="addDialog">
         <form id="newAccountForm">
-            <h3>Add New Account</h3>
-            <p>
-                <label for="label">Label:</label>
-                <input type="text" id="label" placeholder="e.g., My Awesome Service" required />
-            </p>
-            <p>
-                <label for="secret">TOTP Secret:</label>
-                <input type="text" id="secret" placeholder="Enter your secret key" required />
-            </p>
+                <input type="text" id="label" placeholder="Account name" required />
+                <input type="text" id="secret" placeholder="Secret key" required />
             <footer>
                 <button type="button" id="cancelAddBtn">Cancel</button>
                 <button id="save-btn" type="submit">Save</button>
@@ -32,8 +44,8 @@
         </form>
     </dialog>
 
-    <script src="totp.js"></script>
-    <script src="Authentoire.js"></script>
+    <script src="./js/utils/totp.js"></script>
+    <script src="./js/main/Authentoire.js"></script>
 </body>
 
 </html>

@@ -8,6 +8,6 @@
     ],
     "action": {
         "default_popup": "src/Authentoire.html",
-        "default_icon": "src/A-Authentoire.png"
+        "default_icon": "src/icons/A-Authentoire.png"
     }
 }
