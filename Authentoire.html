@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TOTP Authenticator</title>
+    <link rel="stylesheet" href="Authentoire.css" />
+</head>
+
+<body>
+    <main>
+        <img src="authentoire.png" alt="Authentoire Logo" class="dialog-logo">
+        <div id="code-list"></div>
+
+        <button id="add-btn">Add New Account</button>
+    </main>
+
+    <dialog id="addDialog">
+        <form id="newAccountForm">
+            <h3>Add New Account</h3>
+            <p>
+                <label for="label">Label:</label>
+                <input type="text" id="label" placeholder="e.g., My Awesome Service" required />
+            </p>
+            <p>
+                <label for="secret">TOTP Secret:</label>
+                <input type="text" id="secret" placeholder="Enter your secret key" required />
+            </p>
+            <footer>
+                <button type="button" id="cancelAddBtn">Cancel</button>
+                <button id="save-btn" type="submit">Save</button>
+            </footer>
+        </form>
+    </dialog>
+
+    <script src="totp.js"></script>
+    <script src="Authentoire.js"></script>
+</body>
+
+</html>
